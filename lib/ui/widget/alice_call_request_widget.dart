@@ -31,6 +31,7 @@ class _AliceCallRequestWidget
       bodyContent = formatBody(body, getContentType(_call.request!.headers));
     }
     rows.add(getListRow("Body:", bodyContent!));
+    rows.add(getListRow("Full Link:", "_call.request."));
     var formDataFields = _call.request!.formDataFields;
     if (formDataFields?.isNotEmpty == true) {
       rows.add(getListRow("Form data fields: ", ""));
