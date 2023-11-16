@@ -39,7 +39,8 @@ class _AliceCallResponseWidgetState
       rows.addAll(_buildBodyRows());
       rows.add(Expanded(
         child: JsonEditor(
-            json: jsonDecode(_call.response?.body) ?? "", onChanged: (onChange) {}),
+            json: jsonEncode(_call.response?.body ?? ""),
+            onChanged: (onChange) {}),
       ));
 
       return Container(
