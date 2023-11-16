@@ -94,13 +94,38 @@ class _AliceCallDetailsScreenState extends State<AliceCallDetailsScreen>
 
   List<Widget> _getTabBars() {
     List<Widget> widgets = [];
-    widgets.add(Tab(icon: Icon(Icons.info_outline), child: Text("Overview")));
-    widgets.add(Tab(icon: Icon(Icons.arrow_upward), child: Text("Request")));
-    widgets.add(Tab(icon: Icon(Icons.arrow_downward), child: Text("Response")));
+    widgets.add(Tab(
+        icon: Icon(Icons.info_outline),
+        child: Text(
+          "Overview",
+          style: TextStyle(fontSize: 11),
+        )));
+    widgets.add(Tab(
+        icon: Icon(Icons.arrow_upward),
+        child: Text(
+          "Request",
+          style: TextStyle(fontSize: 11),
+        )));
+    widgets.add(Tab(
+        icon: Icon(Icons.arrow_downward),
+        child: Text(
+          "Response",
+          style: TextStyle(fontSize: 11),
+        )));
+    widgets.add(Tab(
+        icon: Icon(Icons.arrow_downward),
+        child: Text(
+          "Json Response",
+          maxLines: 2,
+          style: TextStyle(fontSize: 11),
+        )));
     widgets.add(
-        Tab(icon: Icon(Icons.arrow_downward), child: Text("Json Response", maxLines: 2,)));
-    widgets.add(
-      Tab(icon: Icon(Icons.warning), child: Text("Error")),
+      Tab(
+          icon: Icon(Icons.warning),
+          child: Text(
+            "Error",
+            style: TextStyle(fontSize: 11),
+          )),
     );
     return widgets;
   }
