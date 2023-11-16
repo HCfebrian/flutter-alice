@@ -34,18 +34,21 @@ class _AliceCallResponseWidgetState
   Widget build(BuildContext context) {
     List<Widget> rows = [];
     if (!_call.loading) {
-      rows.addAll(_buildGeneralDataRows());
-      rows.addAll(_buildHeadersRows());
-      rows.addAll(_buildBodyRows());
-      rows.add(Expanded(
-        child: JsonEditor(
-            json: jsonEncode(_call.response?.body ?? ""),
-            onChanged: (onChange) {}),
-      ));
+      // rows.addAll(_buildGeneralDataRows());
+      // rows.addAll(_buildHeadersRows());
+      // rows.addAll(_buildBodyRows());
+      // rows.add(Expanded(
+      //   child: JsonEditor(
+      //       json: jsonEncode(_call.response?.body ?? ""),
+      //       onChanged: (onChange) {}),
+      // ));
 
       return Container(
         padding: const EdgeInsets.all(6),
-        child: ListView(children: rows),
+        child: JsonEditor(
+            json: jsonEncode(_call.response?.body ?? ""),
+            onChanged: (onChange) {}),
+        // child: ListView(children: rows),
       );
     } else {
       return Center(
