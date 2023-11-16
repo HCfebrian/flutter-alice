@@ -6,6 +6,7 @@ import 'package:flutter_alice/ui/utils/alice_constants.dart';
 import 'package:flutter_alice/ui/widget/alice_call_error_widget.dart';
 import 'package:flutter_alice/ui/widget/alice_call_overview_widget.dart';
 import 'package:flutter_alice/ui/widget/alice_call_request_widget.dart';
+import 'package:flutter_alice/ui/widget/alice_call_response_editor_widget.dart';
 import 'package:flutter_alice/ui/widget/alice_call_response_widget.dart';
 import 'package:share/share.dart';
 
@@ -110,6 +111,7 @@ class _AliceCallDetailsScreenState extends State<AliceCallDetailsScreen>
     widgets.add(AliceCallOverviewWidget(widget.call));
     widgets.add(AliceCallRequestWidget(widget.call));
     widgets.add(AliceCallResponseWidget(widget.call));
+    widgets.add(AliceCallResponseEditorWidget(widget.call));
     widgets.add(AliceCallErrorWidget(widget.call));
     return widgets;
   }

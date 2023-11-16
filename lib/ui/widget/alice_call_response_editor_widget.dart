@@ -1,20 +1,23 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_alice/model/alice_http_call.dart';
 import 'package:flutter_alice/ui/widget/alice_base_call_details_widget.dart';
+import 'package:json_editor_flutter/json_editor_flutter.dart';
 
-class AliceCallResponseWidget extends StatefulWidget {
+class AliceCallResponseEditorWidget extends StatefulWidget {
   final AliceHttpCall call;
 
-  AliceCallResponseWidget(this.call);
+  AliceCallResponseEditorWidget(this.call);
 
   @override
   State<StatefulWidget> createState() {
-    return _AliceCallResponseWidgetState();
+    return _AliceCallResponseEditorWidgetState();
   }
 }
 
-class _AliceCallResponseWidgetState
-    extends AliceBaseCallDetailsWidgetState<AliceCallResponseWidget> {
+class _AliceCallResponseEditorWidgetState
+    extends AliceBaseCallDetailsWidgetState<AliceCallResponseEditorWidget> {
   static const _imageContentType = "image";
   static const _videoContentType = "video";
   static const _jsonContentType = "json";
@@ -31,13 +34,21 @@ class _AliceCallResponseWidgetState
   Widget build(BuildContext context) {
     List<Widget> rows = [];
     if (!_call.loading) {
-      rows.addAll(_buildGeneralDataRows());
-      rows.addAll(_buildHeadersRows());
-      rows.addAll(_buildBodyRows());
+      // rows.addAll(_buildGeneralDataRows());
+      // rows.addAll(_buildHeadersRows());
+      // rows.addAll(_buildBodyRows());
+      // rows.add(Expanded(
+      //   child: JsonEditor(
+      //       json: jsonEncode(_call.response?.body ?? ""),
+      //       onChanged: (onChange) {}),
+      // ));
 
       return Container(
         padding: const EdgeInsets.all(6),
-        child: ListView(children: rows),
+        child: JsonEditor(
+            json: jsonEncode(_call.response?.body ?? ""),
+            onChanged: (onChange) {}),
+        // child: ListView(children: rows),
       );
     } else {
       return Center(
