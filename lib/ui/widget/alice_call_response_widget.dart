@@ -35,8 +35,10 @@ class _AliceCallResponseWidgetState
       rows.addAll(_buildGeneralDataRows());
       rows.addAll(_buildHeadersRows());
       rows.addAll(_buildBodyRows());
-      rows.add(JsonEditor(
-          json: _call.response?.body.toString() ?? "", onChanged: (onChange) {}));
+      rows.add(Expanded(
+        child: JsonEditor(
+            json: _call.response?.body.toString() ?? "", onChanged: (onChange) {}),
+      ));
 
       return Container(
         padding: const EdgeInsets.all(6),
