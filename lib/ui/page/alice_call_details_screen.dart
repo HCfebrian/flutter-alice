@@ -98,19 +98,19 @@ class _AliceCallDetailsScreenState extends State<AliceCallDetailsScreen>
         icon: Icon(Icons.info_outline),
         child: Text(
           "Overview",
-          style: TextStyle(fontSize: 12),
+          style: TextStyle(fontSize: 10),
         )));
     widgets.add(Tab(
         icon: Icon(Icons.arrow_upward),
         child: Text(
           "Request",
-          style: TextStyle(fontSize: 12),
+          style: TextStyle(fontSize: 10),
         )));
     widgets.add(Tab(
         icon: Icon(Icons.arrow_downward),
         child: Text(
           "Response",
-          style: TextStyle(fontSize: 12),
+          style: TextStyle(fontSize: 10),
         )));
     widgets.add(Tab(
         icon: Icon(Icons.arrow_downward),
@@ -118,7 +118,7 @@ class _AliceCallDetailsScreenState extends State<AliceCallDetailsScreen>
           "Json Response",
           maxLines: 2,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 12),
+          style: TextStyle(fontSize: 10),
         )));
     widgets.add(
       Tab(
