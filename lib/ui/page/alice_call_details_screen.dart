@@ -97,6 +97,7 @@ class _AliceCallDetailsScreenState extends State<AliceCallDetailsScreen>
     widgets.add(Tab(icon: Icon(Icons.info_outline), text: "Overview"));
     widgets.add(Tab(icon: Icon(Icons.arrow_upward), text: "Request"));
     widgets.add(Tab(icon: Icon(Icons.arrow_downward), text: "Response"));
+    widgets.add(Tab(icon: Icon(Icons.arrow_downward), text: "Response Editor"));
     widgets.add(
       Tab(
         icon: Icon(Icons.warning),
