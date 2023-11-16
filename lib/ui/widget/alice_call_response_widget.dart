@@ -98,7 +98,7 @@ class _AliceCallResponseWidgetState
       // rows.addAll(_buildVideoBodyRows());
     } else if (_isTextResponse()) {
       rows.add(JsonEditor(
-          json: _call.response?.body ?? "", onChanged: (onChange) {}));
+          json: _call.response?.body.toString() ?? "", onChanged: (onChange) {}));
       if (_isLargeResponseBody()) {
         rows.addAll(_buildLargeBodyTextRows());
       } else {
