@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_alice/model/alice_http_call.dart';
 import 'package:flutter_alice/ui/widget/alice_base_call_details_widget.dart';
@@ -37,7 +39,7 @@ class _AliceCallResponseWidgetState
       rows.addAll(_buildBodyRows());
       rows.add(Expanded(
         child: JsonEditor(
-            json: _call.response?.body.toString() ?? "", onChanged: (onChange) {}),
+            json: jsonDecode(_call.response?.body) ?? "", onChanged: (onChange) {}),
       ));
 
       return Container(
