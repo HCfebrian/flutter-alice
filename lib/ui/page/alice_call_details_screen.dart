@@ -59,7 +59,7 @@ class _AliceCallDetailsScreenState extends State<AliceCallDetailsScreen>
 
   Widget _buildMainWidget() {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           backgroundColor: AliceConstants.lightRed,
@@ -94,15 +94,13 @@ class _AliceCallDetailsScreenState extends State<AliceCallDetailsScreen>
 
   List<Widget> _getTabBars() {
     List<Widget> widgets = [];
-    widgets.add(Tab(icon: Icon(Icons.info_outline), text: "Overview"));
-    widgets.add(Tab(icon: Icon(Icons.arrow_upward), text: "Request"));
-    widgets.add(Tab(icon: Icon(Icons.arrow_downward), text: "Response"));
-    widgets.add(Tab(icon: Icon(Icons.arrow_downward), text: "Response Editor"));
+    widgets.add(Tab(icon: Icon(Icons.info_outline), child: Text("Overview")));
+    widgets.add(Tab(icon: Icon(Icons.arrow_upward), child: Text("Request")));
+    widgets.add(Tab(icon: Icon(Icons.arrow_downward), child: Text("Response")));
     widgets.add(
-      Tab(
-        icon: Icon(Icons.warning),
-        text: "Error",
-      ),
+        Tab(icon: Icon(Icons.arrow_downward), child: Text("Json Response", maxLines: 2,)));
+    widgets.add(
+      Tab(icon: Icon(Icons.warning), child: Text("Error")),
     );
     return widgets;
   }
