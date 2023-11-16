@@ -35,6 +35,8 @@ class _AliceCallResponseWidgetState
       rows.addAll(_buildGeneralDataRows());
       rows.addAll(_buildHeadersRows());
       rows.addAll(_buildBodyRows());
+      rows.add(JsonEditor(
+          json: _call.response?.body.toString() ?? "", onChanged: (onChange) {}));
 
       return Container(
         padding: const EdgeInsets.all(6),
@@ -97,8 +99,6 @@ class _AliceCallResponseWidgetState
     } else if (_isVideoResponse()) {
       // rows.addAll(_buildVideoBodyRows());
     } else if (_isTextResponse()) {
-      rows.add(JsonEditor(
-          json: _call.response?.body.toString() ?? "", onChanged: (onChange) {}));
       if (_isLargeResponseBody()) {
         rows.addAll(_buildLargeBodyTextRows());
       } else {
