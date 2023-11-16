@@ -16,3 +16,5 @@ dependencies:
   overlay_support: ^2.1.0
   share: ^2.0.4
   rxdart: ^0.27.1
+  json_editor_flutter: ^1.0.1
+

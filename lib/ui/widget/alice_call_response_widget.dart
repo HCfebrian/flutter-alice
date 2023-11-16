@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_alice/model/alice_http_call.dart';
 import 'package:flutter_alice/ui/widget/alice_base_call_details_widget.dart';
+import 'package:json_editor_flutter/json_editor_flutter.dart';
 
 class AliceCallResponseWidget extends StatefulWidget {
   final AliceHttpCall call;
@@ -96,6 +97,8 @@ class _AliceCallResponseWidgetState
     } else if (_isVideoResponse()) {
       // rows.addAll(_buildVideoBodyRows());
     } else if (_isTextResponse()) {
+      rows.add(JsonEditor(
+          json: _call.response?.body ?? "", onChanged: (onChange) {}));
       if (_isLargeResponseBody()) {
         rows.addAll(_buildLargeBodyTextRows());
       } else {
