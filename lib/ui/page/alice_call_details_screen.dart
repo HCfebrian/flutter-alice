@@ -8,7 +8,7 @@ import 'package:flutter_alice/ui/widget/alice_call_overview_widget.dart';
 import 'package:flutter_alice/ui/widget/alice_call_request_widget.dart';
 import 'package:flutter_alice/ui/widget/alice_call_response_editor_widget.dart';
 import 'package:flutter_alice/ui/widget/alice_call_response_widget.dart';
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 
 class AliceCallDetailsScreen extends StatefulWidget {
   final AliceHttpCall call;
